@@ -1,0 +1,103 @@
+sistema de financas
+
+Deve ser possivel ver as receitas e despesas mensais
+incluir entrada e saida com
+	descricao
+	valor
+	tipo - entrada/saida
+	despesa - fixa/variada
+	categoria - cadastrar parte de categoria
+deve ser possivel incluir lembretes com
+	titulo
+	descricao
+	data
+relatoria de entradas e saidas
+
+opcional
+adicionar cartao
+	titulo do cartao
+	numero do cartao
+	validade
+	limite do cartao
+deve ser possivel ver os cartoes cadastrados
+
+primiros passos
+	editar perfil
+	cadastrar entrada e saidas
+	cadastrar lembretes
+	relatorios
+	altear entrada ou saida
+ 	agendar receita ou despesa
+dashboard
+	receita mensal
+	despesa mensal
+	saldo
+	grafico comreceitas vs despesas no ano
+
+	cotacao do dolar, euro, bitcoin, etc
+
+	inclusao de receita ou despesa
+
+	lembretes ultimas 5 movimentacoes
+
+	sidebar
+		dashboard
+		noticias
+		relatorios
+		agendamentos
+		cartoes
+		lembretes
+		editar perfil
+		informacoes
+
+Telas
+	Dashboard
+	Lembretes
+	Relatorios Entradas, Saidas, Geral
+	Adiconar Cartão
+	Ver Cartões
+	Primiros Passos
+	Editar Perfil
+
+Banco de dados:
+    categoria:
+        nome
+    movimentacoes:
+        descricao
+        valor
+        tipo - enum (entrada, saida)
+        categoria_id
+        dta
+        obs
+    lembrete:
+        titulo
+        data
+        descricao
+
+
+
+
+Descrição do projeto
+
+Prciso de uma api de sistema para controle financeiro
+O sistema precisa ter login e registro
+
+
+Rotas:
+    Login - POST - Email, senha
+    Register - POST - Nome, email, senha, confirm
+
+    Balance - GET - Receita mensal, despesa mensal, saldo
+    Balance - POST - Descricao, valor, tipo, se saida(fixa variada), categoria
+    Balance - PUT - Descricao, valor, tipo, se saida(fixa variada), categoria, data, obs
+
+    Report/entry - GET - Filtros(nome,data,valor,de,ate), id, descricao, categoria, obs
+    Report/exit - GET - Filtros(nome,data,valor,de,ate), id, descricao, categoria, obs
+
+    Card - POST - Titular do cartao, numero, validade, limite do cartao
+    Card - GET - cards
+
+    Notes - POST - Titulo, descricao, data
+    Notes - GET - Notes do mes
+
+
